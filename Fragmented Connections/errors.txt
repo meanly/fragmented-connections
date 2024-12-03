@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 512: style property background appears twice.
+    background "gui/overlay/game_menu.png"  
+              ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Thu Nov 28 17:54:51 2024

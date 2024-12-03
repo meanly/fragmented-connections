@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 15, in script
+    jump minigame_timing
+ScriptError: could not find label 'minigame_timing'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 15, in script
+    jump minigame_timing
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'minigame_timing'.
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.2.24090902
+Fragmented Connections 1.0
+Thu Nov 28 17:00:38 2024
