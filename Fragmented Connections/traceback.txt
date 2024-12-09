@@ -1,22 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 15, in script
-    jump minigame_timing
-ScriptError: could not find label 'minigame_timing'.
+  File "game/script.rpy", line 11, in script
+    $ povname = renpy.input("What is your name?", length=32).strip()
+  File "game/script.rpy", line 11, in <module>
+    $ povname = renpy.input("What is your name?", length=32).strip()
+Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
+Stack was 
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 15, in script
-    jump minigame_timing
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'minigame_timing'.
+  File "game/script.rpy", line 11, in script
+    $ povname = renpy.input("What is your name?", length=32).strip()
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 11, in <module>
+    $ povname = renpy.input("What is your name?", length=32).strip()
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\exports\inputexports.py", line 177, in input
+    rv = renpy.ui.interact(mouse='prompt', type="input", roll_forward=roll_forward)
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ui.py", line 295, in interact
+    raise Exception("ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?\nStack was " + ('\n'.join([str(item) for item in stack])))
+Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
+Stack was 
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Fragmented Connections 1.0
-Thu Nov 28 17:00:38 2024
+Mon Dec  9 13:15:35 2024
