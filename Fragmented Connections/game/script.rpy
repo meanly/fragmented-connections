@@ -20,7 +20,7 @@ transform custom_position:
 
 label start:
     # Ask the player's name before the game starts
-    call ask_name
+    call ask_name from _call_ask_name
 
     mc "My name is [povname]."
 
