@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 26: Line is indented, but the preceding return statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    scene bg gate
-    ^
+File "game/script.rpy", line 109: expected 'image_name_component' not found.
+    show movie "images/background/pen-spinning.webm" onlayer "background" with fade
+                                                             ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Dec  9 13:14:24 2024
+Tue Dec 10 09:32:50 2024

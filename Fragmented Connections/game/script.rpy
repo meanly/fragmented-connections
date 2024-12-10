@@ -27,10 +27,12 @@ label start:
     # Act 1 Introduction
     scene bg gate
     mc "Finally arrived at school after that arduous commute and never-ending red lights!"
+    show mc normal 
     mc "Note to self: Do NOT underestimate rush hour traffic."
 
     scene bg rotunda
     mc "At least I’m not late for the first day of classes."
+    show mc normal
     mc "And I still have a good amount of time to kill before the orientation starts."
     mc "Let’s first check where the classroom is."
 
@@ -44,6 +46,7 @@ label start:
     guard "To the right is the ICT building, where your laboratory classes will take place."
 
     scene bg rotunda
+    show mc normal 
     mc "Thank you po, Kuya!"
     mc "Hmm.."
 
@@ -62,13 +65,19 @@ label path_to_jfh:
     jump third_floor_jfh
 
 label path_to_univlane:
+    scene bg ulane
     mc "There’s an unusual amount of students gathering at one of those kubo."
     mc "I think they’re members of organizations trying to scout members? I think I’ll avoid that for now."
-    return  # Soft block
+    mc "But I don’t think this is where I’m supposed to be right now."
+    mc "I’ll head to the classroom instead."
+    jump path_to_jfh  # Redirects to JFH302 path
 
 label path_to_ict:
+    scene bg ictbuilding
     mc "I’ll just check there later before my Intro to Programming class."
-    return  # Soft block
+    mc "I don’t think I should waste time here before orientation."
+    mc "Let’s just head to the classroom."
+    jump path_to_jfh  # Redirects to JFH302 path
 
 # Third Floor - JFH Building
 label third_floor_jfh:
@@ -93,7 +102,12 @@ label third_floor_jfh:
     menu:
         "Interact with a classmate":
             jump interact_classmate
-        "Show minigame":
+        "Let's kill some time":
+            mc "Where's the professor? I'm too bored!"
+            show mc normal
+            mc "Guess I'll try to practicing my pen spinning."
+            scene bg pen
+            hide mc with fade
             jump timing_minigame
         "Do nothing":
             mc "..."
@@ -108,4 +122,5 @@ label interact_classmate:
 label timing_minigame:
     mc "Let’s test out this minigame."
     jump start_minigame
+    
     return

@@ -63,6 +63,8 @@ label start_minigame:
     call screen fable_2_minigame
 ################################################################################
 
+
+
 label end_minigame: #End minigame. And jump continue game
     hide screen fable_2_minigame
     hide screen fable_timer_left
