@@ -1,34 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/mg lunch combo (knapsack).rpy", line 89, in script
-    call screen result_screen
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: Screen result_screen is not known.
-
+  File "game/script.rpy", line 150, in script
+    jump coincollect_minigame
+ScriptError: could not find label 'coincollect_minigame'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/mg lunch combo (knapsack).rpy", line 89, in script
-    call screen result_screen
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1974, in execute
-    self.call("execute")
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\exports\statementexports.py", line 331, in call_screen
-    renpy.exports.show_screen(_screen_name, *args, _transient=True, **kwargs)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\display\screen.py", line 1327, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen result_screen is not known.
-
+  File "game/script.rpy", line 150, in script
+    jump coincollect_minigame
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'coincollect_minigame'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Fragmented Connections 1.0
-Sun Dec 15 19:08:38 2024
+Sun Dec 15 23:08:40 2024

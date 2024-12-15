@@ -111,6 +111,12 @@ label third_floor_jfh:
             jump timing_minigame
         "lunch combo (knapsack)":
             jump mg_knapsack
+        "pathfinding (shortest path)":
+            jump mg_shortestpath
+        "coin collection (greedy problem)":
+            jump mg_greedy
+        "debugging race (divide&conquer)":
+            jump mg_divideconquer
         "Do nothing":
             mc "..."
             return
@@ -128,6 +134,24 @@ label timing_minigame:
     return
 
 label mg_knapsack:
+    mc "Let’s test out this minigame."
+    jump lunch_combo_minigame
+    
+    return
+
+label mg_shortestpath:
+    mc "Let’s test out this minigame."
+    jump campus_pathfinding
+    
+    return
+
+label mg_greedy:
+    mc "Let’s test out this minigame."
+    jump start_coincollect
+    
+    return
+
+label mg_divideconquer:
     mc "Let’s test out this minigame."
     jump lunch_combo_minigame
     
