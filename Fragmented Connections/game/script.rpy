@@ -153,6 +153,6 @@ label mg_greedy:
 
 label mg_divideconquer:
     mc "Let’s test out this minigame."
-    jump lunch_combo_minigame
+    jump start_debugging_race
     
     return
