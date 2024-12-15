@@ -9,17 +9,34 @@ init python:
     def calculate_coins(collected_coins):
         return sum(collected_coins)
 
+    # Calculate the optimal number of coins to reach the target price
+    def calculate_optimal_coins(target_price, available_coins):
+        remaining = target_price
+        optimal_coins = []
+        # Use the greedy algorithm: prioritize higher denominations
+        for coin in sorted(available_coins, reverse=True):
+            while remaining >= coin:
+                optimal_coins.append(coin)
+                remaining -= coin
+        return optimal_coins
+
     # Evaluate efficiency based on the number of coins used
-    def evaluate_efficiency(target_price, collected_coins):
+    def evaluate_efficiency(target_price, collected_coins, available_coins):
+        total_collected = calculate_coins(collected_coins)
         total_coins_used = len(collected_coins)
-        if calculate_coins(collected_coins) != target_price:
+        optimal_coins = calculate_optimal_coins(target_price, available_coins)
+        optimal_coins_used = len(optimal_coins)
+
+        if total_collected != target_price:
             return "Inefficient! Total collected does not match the target."
-        elif total_coins_used == 1:
-            return "Perfect! You used only one coin."
-        elif total_coins_used <= 3:
-            return "Efficient! You used {} coins.".format(total_coins_used)
+        elif total_coins_used > optimal_coins_used:
+            return "Inefficient! You used {} coins, but the optimal way only uses {} coins.".format(
+                total_coins_used, optimal_coins_used
+            )
+        elif total_coins_used == optimal_coins_used:
+            return "Efficient! You matched the optimal way with {} coins.".format(optimal_coins_used)
         else:
-            return "Inefficient! You used too many coins ({}).".format(total_coins_used)
+            return "Amazing! You used fewer coins than the optimal solution ({} coins)!".format(optimal_coins_used)
 
 label start_coincollect:
     # Set initial variables
@@ -70,7 +87,8 @@ label start_coincollect:
 
     # Evaluate results
     $ total_collected = calculate_coins(collected_coins)
-    $ efficiency_message = evaluate_efficiency(target_price, collected_coins)
+    $ optimal_coins = calculate_optimal_coins(target_price, available_coins)
+    $ efficiency_message = evaluate_efficiency(target_price, collected_coins, available_coins)
 
     # Display the results
     call screen coin_result_screen
@@ -92,6 +110,13 @@ screen coin_result_screen:
     frame:
         xalign 0.5
         yalign 0.5
+        text "Optimal Coins Used: {} ({})".format(
+            len(optimal_coins), ", ".join("₱{}".format(c) for c in optimal_coins)
+        ) size 30
+
+    frame:
+        xalign 0.5
+        yalign 0.6
         text efficiency_message size 30
 
     frame:
