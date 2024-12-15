@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 109: expected 'image_name_component' not found.
-    show movie "images/background/pen-spinning.webm" onlayer "background" with fade
-                                                             ^
+File "game/mg lunch combo (knapsack).rpy", line 35: expected statement.
+    frame:
+         ^
+
+File "game/mg lunch combo (knapsack).rpy", line 40: expected statement.
+    frame:
+         ^
+
+File "game/mg lunch combo (knapsack).rpy", line 45: expected statement.
+    frame:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Dec 10 09:32:50 2024
+Sun Dec 15 19:15:59 2024

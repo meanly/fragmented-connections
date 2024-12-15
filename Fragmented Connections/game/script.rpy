@@ -109,6 +109,8 @@ label third_floor_jfh:
             scene bg pen
             hide mc with fade
             jump timing_minigame
+        "lunch combo (knapsack)":
+            jump mg_knapsack
         "Do nothing":
             mc "..."
             return
@@ -122,5 +124,11 @@ label interact_classmate:
 label timing_minigame:
     mc "Let’s test out this minigame."
     jump start_minigame
+    
+    return
+
+label mg_knapsack:
+    mc "Let’s test out this minigame."
+    jump lunch_combo_minigame
     
     return
