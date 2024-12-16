@@ -86,7 +86,6 @@ label start:
 # Path Decisions
 label path_to_jfh:
     mc "Guess I’ll just head straight to the classroom."
-    scene bg black with fade
     scene bg jfhoutside
     pause(3.0)
     jump third_floor_jfh

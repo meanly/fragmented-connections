@@ -8,11 +8,11 @@
 
     # Create the food menu
     food_items = [
-        FoodItem("Burger", 15, 40),
-        FoodItem("Pizza", 25, 50),
-        FoodItem("Soda", 10, 20),
-        FoodItem("Fries", 10, 15),
-        FoodItem("Salad", 20, 30),
+        FoodItem("Burger", 70, 40),
+        FoodItem("Pizza", 100, 50),
+        FoodItem("Soda", 30, 15),
+        FoodItem("Fries", 60, 25),
+        FoodItem("Salad", 80, 30),
     ]
 
     # Calculate total cost and satisfaction level of selected items
@@ -32,7 +32,7 @@
 
 label lunch_combo_minigame:
     # Budget and selected items
-    $ budget = 50
+    $ budget = 200
     $ selected_items = []
 
     # Game interface
