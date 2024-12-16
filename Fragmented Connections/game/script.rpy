@@ -99,7 +99,7 @@ label path_to_univlane:
     show friend_1
     with moveinleft
     stranger "Heya dude! Are ya here to join the Arts Club as well? The name's Charles, I'm a computer science freshman. May I seat next to you?"
-    mc "H-hi, I'm ___, same department as you. Yeah you can sit he--"
+    mc "H-hi, I'm [povname], same department as you. Yeah you can sit he--"
     mc "“Woah! A comsci comrade? And he's joining the Arts club too? What great news to start the day!”"
     mc "Umm...sorry, I don't think I'm joining the Art Club."
     charles "Aww, bummer. It's fine though, its more fun to join a club that fits your interests!"
