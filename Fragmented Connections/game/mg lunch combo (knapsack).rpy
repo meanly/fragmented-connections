@@ -15,17 +15,17 @@
         FoodItem("Salad", 20, 30),
     ]
 
-    # Calculate total cost and value of selected items
+    # Calculate total cost and satisfaction level of selected items
     def calculate_total(selected_items):
         total_cost = sum(item.cost for item in selected_items)
-        total_value = sum(item.value for item in selected_items)
-        return total_cost, total_value
+        satisfaction_level = sum(item.value for item in selected_items)
+        return total_cost, satisfaction_level
 
-    # Generate flavor text based on total value
-    def generate_flavor_text(total_value):
-        if total_value < 50:
+    # Generate flavor text based on satisfaction level
+    def generate_flavor_text(satisfaction_level):
+        if satisfaction_level < 50:
             return "You feel slightly hungry and unsatisfied."
-        elif 50 <= total_value < 100:
+        elif 50 <= satisfaction_level < 100:
             return "You feel full and satisfied."
         else:
             return "You feel overly stuffed but happy."
@@ -47,7 +47,7 @@ label lunch_combo_minigame:
         frame:
             xalign 0.5
             yalign 0.2
-            text "Budget: ₱{} \nTotal Cost: ₱{} \nTotal Value: {}".format(
+            text "Budget: ₱{} \nTotal Cost: ₱{} \nSatisfaction Level: {}".format(
                 budget, calculate_total(selected_items)[0], calculate_total(selected_items)[1]
             )
 
@@ -78,11 +78,11 @@ label lunch_combo_minigame:
     call screen lunch_combo_screen
 
     # Calculate totals
-    $ total_cost, total_value = calculate_total(selected_items)
-    $ flavor_text = generate_flavor_text(total_value)
+    $ total_cost, satisfaction_level = calculate_total(selected_items)
+    $ flavor_text = generate_flavor_text(satisfaction_level)
 
-    # Create formatted strings for the total cost and value
-    $ total_display = "Total Cost: ₱{} \nTotal Value: {}".format(total_cost, total_value)
+    # Create formatted strings for the total cost and satisfaction level
+    $ total_display = "Total Cost: ₱{} \nSatisfaction Level: {}".format(total_cost, satisfaction_level)
     $ flavor_display = "Flavor Text: {}".format(flavor_text)
 
     # Call the results screen to display totals
@@ -107,10 +107,10 @@ screen result_screen:
 
 label result_screen_label:
     # This is where the result screen is called and displayed
-    $ total_cost, total_value = calculate_total(selected_items)
-    $ flavor_text = generate_flavor_text(total_value)
+    $ total_cost, satisfaction_level = calculate_total(selected_items)
+    $ flavor_text = generate_flavor_text(satisfaction_level)
 
-    $ total_display = "Total Cost: ₱{} \nTotal Value: {}".format(total_cost, total_value)
+    $ total_display = "Total Cost: ₱{} \nSatisfaction Level: {}".format(total_cost, satisfaction_level)
     $ flavor_display = "Flavor Text: {}".format(flavor_text)
 
     # Call the screen to display the results

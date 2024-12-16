@@ -1,24 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 181, in script
-    class_rep "Hey, looks like the food square is busy today. You getting anything?"
-Exception: Sayer 'class_rep' is not defined.
+  File "game/script.rpy", line 233, in script
+    jump pathfinding_mini_game  # Jump to the pathfinding mini-game
+ScriptError: could not find label 'pathfinding_mini_game'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 181, in script
-    class_rep "Hey, looks like the food square is busy today. You getting anything?"
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 2573, in execute
-    Say.execute(self)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'class_rep' is not defined.
+  File "game/script.rpy", line 233, in script
+    jump pathfinding_mini_game  # Jump to the pathfinding mini-game
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Ren'Py\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'pathfinding_mini_game'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Fragmented Connections 1.0
-Mon Dec 16 08:23:33 2024
+Mon Dec 16 08:34:18 2024

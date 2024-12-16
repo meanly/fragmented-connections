@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 282: 'food' is not a keyword argument or valid child of the screen statement.
-    screen bg food with fade
-                  ^
+The label start_coincollect is defined twice, at File "game/mg coin collection (greedy algo).rpy", line 41:
+label start_coincollect:
+and File "game/mg lunch combo (knapsack).rpy", line 50:
+label start_coincollect:
+
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Dec 16 08:27:06 2024
+Mon Dec 16 08:32:59 2024
