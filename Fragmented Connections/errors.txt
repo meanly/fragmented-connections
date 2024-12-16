@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/mg debugging race (d&q).rpy", line 80: 'return' is not a keyword argument or valid child of the screen statement.
-    return  
-          ^
+File "game/script.rpy", line 282: 'food' is not a keyword argument or valid child of the screen statement.
+    screen bg food with fade
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Dec 16 00:11:01 2024
+Mon Dec 16 08:27:06 2024

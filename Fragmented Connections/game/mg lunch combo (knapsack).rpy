@@ -116,4 +116,6 @@ label result_screen_label:
     # Call the screen to display the results
     call screen result_screen
 
+    jump food_square_after_knapsack
+
     return

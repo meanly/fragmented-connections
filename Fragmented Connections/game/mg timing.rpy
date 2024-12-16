@@ -17,13 +17,16 @@ screen fable_2_minigame:
     text "[fable_minigame_bar]\nBar Value" align(0.5,0.2)
     text "[fable_you_press_button]" align(0.5,0.3)
 
+    # Add the quit button
+    textbutton "Quit Mini-Game" action Jump("end_minigame") align(0.5, 0.9)
+
     if fable_minigame_bar >= -14 and fable_minigame_bar <= 14:
         key "K_SPACE":
             if fable_you_press_button == 0:
                 if fable_minigame_score < 14:
                     action [SetVariable("fable_minigame_score", fable_minigame_score + 1), SetVariable("fable_you_press_button", fable_you_press_button + 1), Show("you_press_button_good")]
                 else:
-                    action Jump("end")
+                    action Jump("end_minigame")
             elif fable_you_press_button == 1:
                 action SetVariable("fable_minigame_score", fable_minigame_score + 0)
     else:
@@ -70,4 +73,5 @@ label end_minigame: #End minigame. And jump continue game
     hide screen fable_timer_left
     hide screen fable_timer_right
     $ renpy.pause(0.3)
-    jump end #continue game
+    mc "that was fun, but I need to focus."
+    jump path_continue_listening #continue game
